@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/word_vert_option_1"
+        android:icon="@drawable/edit_main_blue"
+        android:title="@string/edit_word"/>
+    <item android:id="@+id/word_vert_option_2"
+        android:icon="@drawable/delete_red"
+        android:title="@string/remove_word"/>
+    <item android:id="@+id/word_vert_option_3"
+        android:icon="@drawable/inventory_main_blue"
+        android:title="@string/archive_word"/>
+    <item android:id="@+id/word_vert_option_4"
+        android:icon="@drawable/screenshot_main_blue"
+        android:title="@string/screenshot"/>
+</menu>

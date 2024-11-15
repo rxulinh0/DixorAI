@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name">DixorAI</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="trivia_mode">Trivia Mode</string>
+    <string name="poet_mode">Poet Mode</string>
+    <string name="reading_mode">Reading Mode</string>
+    <string name="add_new_word">Add a new word</string>
+
+    <string name="type_word">Type word</string>
+    <string name="message_empty_word_list">Add some words to try out!</string>
+    <string name="welcome_page_string">Welcome to DixorAI! We need a few details before getting started</string>
+    <string name="welcome_page_button_string">Alright, Let\'s Do It</string>
+    <string name="getting_started_b_question">What is your name?</string>
+    <string name="first_name_or_nick_name">First Name or Nickname</string>
+    <string name="select_language">Select your language</string>
+    <string name="en_name">English</string>
+    <string name="es_name">Spanish</string>
+    <string name="word_repeated_message">You already have this word in your glossary!</string>
+    <!-- Word Vert (OnLongClick) Menu-->
+    <string name="edit_word">Edit word</string>
+    <string name="remove_word">Remove word</string>
+    <string name="archive_word">Archive word</string>
+    <string name="screenshot">Screenshot</string>
+    <!-- Bugs & Errors messages -->
+    <string name="device_not_supported_old_android_version">Device not supported, you have an older Android version…</string>
+    <string name="something_went_wrong">Something went wrong...</string>
+    <string name="something_went_wrong_try_again">Something went wrong... please try again or contact us</string>
+    <string name="something_went_wrong_getting_color_resources">Something went wrong getting color resources...</string>
+    <string name="google_assistant_not_supported">Speech recognition not supported on this device (Google Assistant not detected)</string>
+    <!-- Defs Strings -->
+    <string name="here_should_be_your_word_definition">Here should be your word definition...</string>
+    <string name="redefine">Redefine</string>
+    <!-- Tag Strings -->
+    <string name="add_a_new_tag">Add a new tag</string>
+    <string name="tag">Tag</string>
+    <string name="add_existing_tag">Add an existing tag...</string>
+    <string name="tag_already_added">You already have this tag in this word!</string>
+    <!-- ..... -->
+    <string name="undo">Undo</string>
+    <string name="all_words_removed_successfully">All words removed successfully...</string>
+    <string name="all_words_archived_successfully">All words archived successfully</string>
+    <string name="word_removed_successfully">Word removed successfully...</string>
+    <!-- Gemini API Prompt Strings -->
+    <string name="write_joke">Write a joke about someone who hasn\'t wrote a word in a dictionary called Dixor, and which name is</string>
+    <!-- ..... -->
+    <!-- Settings Fragment Strings -->
+    <string name="word_definitions">Word Definitions</string>
+    <string name="themes">Themes</string>
+    <string name="change_language">Change Language</string>
+    <string name="change_font">Change Font</string>
+    <string name="manage_account">Manage Account</string>
+    <string name="about_us">About this software</string>
+    <string name="choose_a_font">Choose a font...</string>
+    <string name="change_max_words_definition_settings">Limit of Words for a Definition</string>
+    <string name="auto_define_words">Define words automatically</string>
+    <!-- Positive and negative strings -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <!-- Archive Card -->
+    <string name="archive_settings">Archive Settings</string>
+    <string name="change_max_settings">Change Max Number of Words in Home</string>
+    <string name="sample_archive_max_slider">15 words</string>
+    <string name="words">words</string>
+    <string name="en" translatable="false">en</string>
+    <string name="es" translatable="false">es</string>
+    <!-- Reading Mode Strings -->
+    <string name="what_book_are_you_reading">What book are you reading?</string>
+    <string name="type_book_name">Type book name...</string>
+    <string name="add_new_book">Add a new book</string>
+    <string name="book_name">Book Name</string>
+    <string name="select_words">Select Words</string>
+    <string name="choose_words_for_trivia">Choose words for Trivia</string>
+    <!-- Trivia Mode Strings -->
+    <string name="first_question_trivia_mode">What kind of Trivia?</string>
+    <string name="all_words">Trivia of all Words</string>
+    <string name="by_books">Trivia by a Book words</string>
+    <string name="by_tags">Trivia by a Word Tag</string>
+    <string name="standard_mode">Standard Mode</string>
+    <string name="start_trivia">Start Trivia</string>
+    <string name="num_questions_per_word">Number of questions per Word</string>
+    <string name="num_words_trivia">Number of words for Trivia</string>
+    <string name="answer_question">Answer the question here...</string>
+    <!-- Archive all words dialog strings -->
+    <string name="archive_all_words_dialog_title">Are you sure?</string>
+    <string name="archive_all_words_dialog_message">This will send all words to your word archive</string>
+    <!-- Remove all words dialog strings -->
+    <string name="remove_all_words_dialog_title">Are you sure?</string>
+    <string name="remove_all_words_dialog_message">This will remove all words from Home</string>
+    <!-- Question Strings -->
+    <string name="question_something">Question something...</string>
+    <string name="write_your_question">Write your question...</string>
+    <string name="here_should_be_your_question_answer">Here should be your question answer...</string>
+    <string name="question_default_prompt">Answer the following question about the word</string>
+    <!-- ..... -->
+    <string name="choose_language">Choose language for definitions...</string>
+    <string-array name="choose_language_items">
+        <item>English</item>
+        <item>Spanish</item>
+    </string-array>
+    <string name="sans_serif">Sans Serif</string>
+    <string name="serif">Serif</string>
+    <string name="aesthetic_serif">Aesthetic Serif</string>
+    <string name="old_book_serif">Old Book Serif</string>
+    <string name="apply">Apply</string>
+    <!-- Speech Recognizer -->
+    <string name="ready_to_listen">Ready to listen your voice...</string>
+    <!-- Font Error Messages -->
+    <string name="font_not_found_error">This font is not found in resources, try again or change font...</string>
+    <!-- Prompt Strings -->
+    <!-- Word Archive Strings -->
+    <string name="your_word_archive">Your Word Archive</string>
+    <!-- Screenshot Strings -->
+    <string name="screenshot_word_definition">This word definition has been screenshot and saved to your gallery</string>
+    <string name="screenshot_error_message">Something went wrong when saving screenshot</string>
+    <!--About Software Strings -->
+    <string name="about_us_dialog_text">Indie app made by Raul Pulido-Gonzalez\nVenezuela\nCompilation: v.alpha.01</string>
+    <!-- Trivia Mode AI Prompt Strings -->
+    <string name="trivia_prompt_make_random_question_a">Make a random trivia question about the word: </string>
+    <string name="trivia_prompt_make_random_question_list">Make a random trivia question of the word </string>
+    <string name="trivia_prompt_different_than">different than every question from this list of questions: (</string>
+    <!-- .................. -->
+</resources>

@@ -1,0 +1,9 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="960"
+    android:viewportHeight="960">
+  <path
+      android:pathData="M172,834q-53,0 -89.5,-36.5T46,708v-456q0,-53 36.5,-89.5T172,126h416q30.28,0 57.38,13.55Q672.47,153.09 690,177l224,303 -224,303q-17.53,23.91 -44.62,37.45Q618.28,834 588,834L172,834ZM171,709h419l168,-229 -168,-229L171,251v458ZM381,480Z"
+      android:fillColor="@color/cardview_light_background"/>
+</vector>
