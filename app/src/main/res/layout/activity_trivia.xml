@@ -18,9 +18,72 @@
         app:lottie_rawRes="@raw/loading_anim"
         app:lottie_speed="1.0"
         android:visibility="visible"/>
+    <TextView
+        android:id="@+id/trivia_loadingMessageTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trivia_loadingAnimationView"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserratblack"
+        android:textColor="@color/secondary_blue_gradient"
+        android:text="@string/creating_trivia_questions"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/trivia_question_fullscreen_rv"
-        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"/>
+        app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
+        android:visibility="gone"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/trivia_notchCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="63dp"
+        android:visibility="gone"
+        app:strokeWidth="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/trivia_completedQuestionsIconIV"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/question_mark_main_blue"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/trivia_completedQuestionsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratblack"
+                android:layout_centerVertical="true"
+                android:text="0/5"
+                android:textSize="24sp"
+                android:textColor="@color/main_blue"
+                android:layout_toEndOf="@+id/trivia_completedQuestionsIconIV"/>
+            <TextView
+                android:id="@+id/trivia_timerTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/trivia_timerAnimationView"
+                android:fontFamily="@font/montserratblack"
+                android:text="30s"
+                android:textSize="24sp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/main_blue"
+                />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/trivia_timerAnimationView"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/timer_icon_anim"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
 </RelativeLayout>

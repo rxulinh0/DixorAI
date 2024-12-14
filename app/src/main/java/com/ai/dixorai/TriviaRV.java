@@ -15,6 +15,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StyleSpan;
@@ -32,6 +33,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.graphics.Bitmap;
+import android.text.TextWatcher;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -83,8 +85,38 @@ public class TriviaRV extends RecyclerView.Adapter<TriviaRV.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.question_content_tv.setText(questionList.getQuestions().get(position).getContent());
+        holder.question_answer_edit_input_text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String answer = charSequence.toString();
+                if(answer.equals(questionList.getQuestions().get(position).getWord())){
+                    holder.question_answer_edit_input_text.setEnabled(false);
+                    if (context instanceof Trivia) {
+                        ((Trivia) context).updateNumAnswers();
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+    }
+
+    public QuestionList getQuestionList() {
+        return questionList;
+    }
+
+    public void setQuestionList(QuestionList questionList) {
+        this.questionList = questionList;
     }
 
     @Override

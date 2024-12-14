@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.card.MaterialCardView;
 
 public class TriviaMode extends AppCompatActivity {
@@ -30,6 +32,9 @@ public class TriviaMode extends AppCompatActivity {
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        all_words_card = findViewById(R.id.all_words_trivia_mode_card);
+        book_mode_card = findViewById(R.id.books_trivia_mode_card);
+        tags_mode_card = findViewById(R.id.tags_trivia_mode_card);
         all_words_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,17 +44,18 @@ public class TriviaMode extends AppCompatActivity {
         book_mode_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                showModalBottomSheet(R.layout.trivia_books_modal_bottom_sheet_content);
             }
         });
         tags_mode_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                showModalBottomSheet(R.layout.trivia_tags_modal_bottom_sheet_content);
             }
         });
     }
     public void showModalBottomSheet(int modalContentSheetResourceID){
-
+        ModalBottomSheetTrivia modalBottomSheetTrivia = new ModalBottomSheetTrivia(modalContentSheetResourceID,getApplicationContext());
+        modalBottomSheetTrivia.show(getSupportFragmentManager(), ModalBottomSheetTrivia.TAG);
     }
 }

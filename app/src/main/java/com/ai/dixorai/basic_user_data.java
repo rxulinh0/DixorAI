@@ -1,11 +1,16 @@
 package com.ai.dixorai;
 
+import android.content.Context;
+
+import androidx.lifecycle.MutableLiveData;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.Executor;
 
 // Singleton - User Preferences & Settings class ---->
 // TODO: Retrieve from User Memory by using GSON
@@ -23,6 +28,20 @@ public class basic_user_data {
     private static int preferred_font; // Range [0,last_font_id], where last_font_id is from the succession 0,1,2,3,4,n and belongs to natural numbers
     private static boolean auto_define_words = false;
     private static int def_word_limit = 90;
+    private static MutableLiveData<Integer> aux_counter_trivia_questions_generated = new MutableLiveData<>();
+    private static QuestionList questionList;
+
+    public static MutableLiveData<Integer> getAux_counter_trivia_questions_generated() {
+        return aux_counter_trivia_questions_generated;
+    }
+
+    public static void addCounterTriviaQuestionsGenerated(){
+        aux_counter_trivia_questions_generated.setValue(aux_counter_trivia_questions_generated.getValue()+1);
+    }
+
+    public static void resetAux_counter_trivia_questions_generated(){
+        aux_counter_trivia_questions_generated.setValue(0);
+    }
 
     public static String getPref_lang_short_name() {
         return pref_lang_short_name;

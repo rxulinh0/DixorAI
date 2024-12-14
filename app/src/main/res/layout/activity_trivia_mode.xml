@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:fontFamily="@font/montserratblack"
-            android:textSize="80dp"
+            android:textSize="80sp"
             android:text="@string/first_question_trivia_mode"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"

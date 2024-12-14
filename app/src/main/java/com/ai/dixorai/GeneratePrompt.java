@@ -47,6 +47,37 @@ public class GeneratePrompt {
         }, executor);
         return ai_generated_response[0];
     }
+
+    public String genQuestionPrompt(String prompt){
+        final String[] ai_generated_response = new String[1];
+        String API_KEY = BuildConfig.API_KEY;
+        GenerativeModel gm = new GenerativeModel(/* modelName */ "gemini-1.5-flash",
+// Access your API key as a Build Configuration variable (see "Set up your API key" above)
+                /* apiKey */ API_KEY);
+        GenerativeModelFutures model = GenerativeModelFutures.from(gm);
+        Content content = new Content.Builder()
+                .addText(prompt)
+                .build();
+
+        ListenableFuture<GenerateContentResponse> response = model.generateContent(content);
+        Futures.addCallback(response, new FutureCallback<GenerateContentResponse>() {
+            @Override
+            public void onSuccess(GenerateContentResponse result) {
+                ai_generated_response[0] = removeFirstLine(result.getText());
+                System.out.println(ai_generated_response[0]);
+                basic_user_data.addCounterTriviaQuestionsGenerated();
+                //viewModel.addWord(basic_user_data.getAllWords().get(0));
+                //startTypewriterEffect(word_def_tv,resultText);
+                //wordRvAdapter.notifyItemChanged(position);
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                t.printStackTrace();
+            }
+        }, executor);
+        return ai_generated_response[0];
+    }
     private static String removeFirstLine(String text) {
         if(!(text.charAt(0)=='#')){
             return text;

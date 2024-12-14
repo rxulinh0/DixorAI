@@ -81,6 +81,7 @@
     <string name="standard_mode">Standard Mode</string>
     <string name="start_trivia">Start Trivia</string>
     <string name="num_questions_per_word">Number of questions per Word</string>
+    <string name="trivia_time_duration">Time duration (in seconds)</string>
     <string name="num_words_trivia">Number of words for Trivia</string>
     <string name="answer_question">Answer the question here...</string>
     <!-- Archive all words dialog strings -->
@@ -118,8 +119,15 @@
     <!--About Software Strings -->
     <string name="about_us_dialog_text">Indie app made by Raul Pulido-Gonzalez\nVenezuela\nCompilation: v.alpha.01</string>
     <!-- Trivia Mode AI Prompt Strings -->
-    <string name="trivia_prompt_make_random_question_a">Make a random trivia question about the word: </string>
-    <string name="trivia_prompt_make_random_question_list">Make a random trivia question of the word </string>
+    <string name="trivia_prompt_make_random_question_a">Make a random trivia question (in one very short paragraph) about the word: </string>
+    <string name="trivia_prompt_make_random_question_list">Make a random trivia question (in one very short paragraph) of the word </string>
     <string name="trivia_prompt_different_than">different than every question from this list of questions: (</string>
+    <!-- Loading screen TV messages -->
+    <string name="creating_trivia_questions">We are creating questions for your trivia...</string>
+    <string name="half_there">Half there...</string>
+    <string name="wont_be_long">It won\'t be long, wait a little longer.</string>
+    <string name="almost_done">We are almost done...</string>
+    <!-- Trivia Error -->
+    <string name="trivia_not_enough_words">You need at least 3 words in your glossary for starting a Trivia...</string>
     <!-- .................. -->
 </resources>

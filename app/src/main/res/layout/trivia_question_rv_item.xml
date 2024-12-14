@@ -26,30 +26,31 @@
             android:layout_marginHorizontal="10dp">
             <TextView
                 android:id="@+id/trivia_question_rv_item_content_tv"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="150dp"
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/montserratblack"
-                android:justificationMode="none"
+                android:justificationMode="inter_word"
                 android:outlineAmbientShadowColor="@color/main_blue"
                 android:outlineSpotShadowColor="@color/main_blue"
                 android:text="@string/first_question_trivia_mode"
-                android:maxLines="5"
+                android:maxLines="8"
                 android:autoSizeTextType="uniform"
                 android:autoSizeMinTextSize="14sp"
                 android:autoSizeMaxTextSize="80sp"
-                android:textAlignment="textStart"
-                android:textColor="@color/main_blue"
-                android:textSize="80sp" />
+                android:textColor="#000000"
+                android:textSize="65sp" />
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/trivia_question_rv_item_content_tv"
+                android:layout_alignBottom="@id/trivia_question_rv_item_content_tv"
                 android:layout_marginHorizontal="21dp"
-                app:cardBackgroundColor="@color/main_blue"
-                app:cardCornerRadius="50dp">
+                app:cardBackgroundColor="#000000"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="21dp"
+                app:strokeWidth="0dp">
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">

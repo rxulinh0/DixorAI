@@ -24,7 +24,7 @@ public class AIGenQuestion extends GeneratePrompt {
         this.word = word;
     }
     public TriviaQuestion gen_question(){
-        return new TriviaQuestion(genPrompt(context.getString(R.string.trivia_prompt_make_random_question_a) + word), word);
+        return new TriviaQuestion(genPrompt(context.getResources().getString(R.string.trivia_prompt_make_random_question_a) + word), word);
     }
     public ArrayList<TriviaQuestion> gen_word_question_list(int n_questions){
         ArrayList<TriviaQuestion> result = new ArrayList<>(n_questions);
@@ -32,9 +32,9 @@ public class AIGenQuestion extends GeneratePrompt {
         StringBuilder prompt_q_list = new StringBuilder("(");
         for(int i = 0 ; i < n_questions ; ++i){
             if(i==0){
-                prompt = context.getString(R.string.trivia_prompt_make_random_question_a) + word;
+                prompt = context.getResources().getString(R.string.trivia_prompt_make_random_question_a) + word;
                 try{
-                    result.add(0,new TriviaQuestion(genPrompt(prompt),word));
+                    result.add(0,new TriviaQuestion(genQuestionPrompt(prompt),word));
                     prompt_q_list.append(result.get(0)).append(", ");
                 } catch(Exception e){
                     e.printStackTrace();
@@ -42,7 +42,7 @@ public class AIGenQuestion extends GeneratePrompt {
             } else{
                 prompt = context.getString(R.string.trivia_prompt_make_random_question_list) + prompt_q_list;
                 try{
-                    result.add(0,new TriviaQuestion(genPrompt(prompt),word));
+                    result.add(0,new TriviaQuestion(genQuestionPrompt(prompt),word));
                 } catch(Exception e){
                     e.printStackTrace();
                 }

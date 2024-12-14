@@ -70,6 +70,7 @@
     <string name="what_book_are_you_reading">¿Qué libro estás leyendo?</string>
     <string name="book_name">Nombre del Libro</string>
     <string name="standard_mode">Modo Estándar</string>
+    <string name="trivia_time_duration">Tiempo de Duración (en segundos)</string>
     <string name="num_words_trivia">Número de palabras para la Trivia</string>
     <string name="answer_question">Responde la pregunta aquí...</string>
     <string name="archive_all_words_dialog_title">¿Estás seguro?</string>
@@ -93,7 +94,12 @@
     <string name="num_questions_per_word">Número de preguntas por palabra</string>
     <string name="select_words">Seleccionar Palabras</string>
     <string name="choose_words_for_trivia">Escoge palabras para la Trivia</string>
-    <string name="trivia_prompt_make_random_question_a">Realiza cualquier pregunta para una trivia de la palabra:</string>
-    <string name="trivia_prompt_make_random_question_list">"Realiza cualquier pregunta para una trivia de la palabra "</string>
+    <string name="trivia_prompt_make_random_question_a">Realiza cualquier pregunta (en un solo párrafo muy corto) para una trivia de la palabra:</string>
+    <string name="trivia_prompt_make_random_question_list">"Realiza cualquier pregunta (en un solo párrafo muy corto) para una trivia de la palabra "</string>
     <string name="trivia_prompt_different_than">que sea diferente a cada pregunta de esta lista de preguntas: (</string>
+    <string name="creating_trivia_questions">Estamos creando preguntas para tu trivia..</string>
+    <string name="half_there">Vamos por la mitad...</string>
+    <string name="almost_done">Ya casi...</string>
+    <string name="wont_be_long">No tardará mucho...</string>
+    <string name="trivia_not_enough_words">Necesitas al menos 3 palabras para iniciar una Trivia...</string>
 </resources>

@@ -1,47 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    style="@style/Widget.Material3.BottomSheet"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/cardview_light_background"
+    style="@style/Widget.Material3.BottomSheet"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    <!-- Drag handle for accessibility -->
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+        android:id="@+id/drag_handle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/trivia_all_words_modal_bsc_standard_mode_switch"
+        android:text="@string/standard_mode"
+        android:textColor="@color/main_blue"
+        app:trackTint="@color/secondary_blue_gradient"
+        app:thumbTint="@color/main_blue"
+        android:textSize="21sp"
+        android:checked="true"
+        android:fontFamily="@font/montserratblack"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratblack"
+        android:textSize="21sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="75dp"
+        android:backgroundTint="@color/main_blue"
+        android:textColor="@color/cardview_light_background"
+        android:text="@string/start_trivia"
+        android:id="@+id/trivia_all_words_modal_bsc_start_trivia_button" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
-            android:id="@+id/trivia_all_words_modal_bsc_drag_handle"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:id="@+id/trivia_all_words_modal_bsc_expanded_rl"
+        android:visibility="visible">
+        <com.google.android.material.divider.MaterialDivider
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/trivia_all_words_modal_bsc_standard_mode_switch"
-            android:text="@string/standard_mode"
-            android:textColor="@color/main_blue"
-            app:trackTint="@color/secondary_blue_gradient"
-            app:thumbTint="@color/main_blue"
-            android:textSize="21sp"
-            android:fontFamily="@font/montserratblack"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/trivia_all_words_modal_bsc_start_trivia_button"/>
-        <com.google.android.material.button.MaterialButton
+            app:dividerThickness="4dp"
+            app:dividerColor="@color/main_blue"
+            android:layout_marginStart="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/trivia_all_words_modal_bsc_first_divider"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserratblack"
-            android:textSize="21sp"
-            android:backgroundTint="@color/main_blue"
-            android:textColor="@color/cardview_light_background"
-            android:text="@string/start_trivia"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/secondary_blue_gradient"
+            android:maxLines="1"
             android:layout_centerHorizontal="true"
-            android:id="@+id/trivia_all_words_modal_bsc_start_trivia_button"
-            android:layout_below="@+id/trivia_all_words_modal_bsc_drag_handle"/>
+            android:text="@string/num_questions_per_word"
+            android:layout_marginHorizontal="21dp"/>
+        <com.google.android.material.slider.Slider
+            android:layout_below="@+id/trivia_all_words_modal_bsc_first_divider"
+            android:layout_marginHorizontal="21dp"
+            android:id="@+id/trivia_all_words_modal_bsc_num_questions_per_word_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="1"
+            android:valueFrom="1.0"
+            android:valueTo="3.0"
+            app:haloColor="@color/main_blue"
+            app:thumbColor="@color/main_blue"
+            app:thumbWidth="30sp"
+            app:tickColor="@color/main_blue"
+            app:tickRadiusActive="5dp"
+            app:tickRadiusInactive="6dp"
+            app:trackColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="4dp"
+            app:dividerColor="@color/main_blue"
+            android:layout_marginStart="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/trivia_all_words_modal_bsc_second_divider"
+            android:layout_below="@+id/trivia_all_words_modal_bsc_num_questions_per_word_slider"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratblack"
+            android:autoSizeMinTextSize="14sp"
+            android:autoSizeMaxTextSize="21sp"
+            android:autoSizeTextType="uniform"
+            android:textColor="@color/secondary_blue_gradient"
+            android:maxLines="1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/trivia_time_duration"
+            android:layout_below="@+id/trivia_all_words_modal_bsc_num_questions_per_word_slider"
+            android:layout_marginHorizontal="21dp"/>
+        <com.google.android.material.slider.Slider
+            android:layout_below="@+id/trivia_all_words_modal_bsc_second_divider"
+            android:layout_marginHorizontal="21dp"
+            android:id="@+id/trivia_all_words_modal_bsc_time_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="30"
+            android:valueFrom="30.0"
+            android:valueTo="180"
+            app:haloColor="@color/main_blue"
+            app:thumbColor="@color/main_blue"
+            app:thumbWidth="30sp"
+            app:tickColor="@color/main_blue"
+            app:tickRadiusActive="5dp"
+            app:tickRadiusInactive="6dp"
+            app:trackColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/trivia_all_words_modal_bsc_expanded_rl"
-            android:layout_below="@+id/trivia_all_words_modal_bsc_standard_mode_switch">
+            android:layout_below="@+id/trivia_all_words_modal_bsc_time_slider"
+            android:id="@+id/trivia_all_words_modal_bsc_num_questions_per_word_rl">
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,47 +135,7 @@
                 android:layout_marginEnd="42dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:id="@+id/trivia_all_words_modal_bsc_first_divider"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserratblack"
-                android:autoSizeMinTextSize="14sp"
-                android:autoSizeMaxTextSize="21sp"
-                android:autoSizeTextType="uniform"
-                android:textColor="@color/secondary_blue_gradient"
-                android:maxLines="1"
-                android:layout_centerHorizontal="true"
-                android:text="@string/num_questions_per_word"
-                android:layout_marginHorizontal="21dp"/>
-            <com.google.android.material.slider.Slider
-                android:layout_below="@+id/trivia_all_words_modal_bsc_first_divider"
-                android:layout_marginHorizontal="21dp"
-                android:id="@+id/trivia_all_words_modal_bsc_num_questions_per_word_slider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:stepSize="1"
-                android:valueFrom="1.0"
-                android:valueTo="3.0"
-                app:haloColor="@color/main_blue"
-                app:thumbColor="@color/main_blue"
-                app:thumbWidth="30sp"
-                app:tickColor="@color/main_blue"
-                app:tickRadiusActive="5dp"
-                app:tickRadiusInactive="6dp"
-                app:trackColor="@color/black"
-                tools:ignore="SpeakableTextPresentCheck" />
-            <com.google.android.material.divider.MaterialDivider
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:dividerThickness="4dp"
-                app:dividerColor="@color/main_blue"
-                android:layout_marginStart="42dp"
-                android:layout_marginEnd="42dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:layout_below="@+id/trivia_all_words_modal_bsc_num_questions_per_word_slider"
-                android:id="@+id/trivia_all_words_modal_bsc_second_divider"/>
+                android:id="@+id/trivia_all_words_modal_bsc_third_divider"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,14 +147,12 @@
                 android:maxLines="1"
                 android:layout_centerHorizontal="true"
                 android:text="@string/num_words_trivia"
-                android:layout_below="@+id/trivia_all_words_modal_bsc_num_questions_per_word_slider"
                 android:layout_marginHorizontal="21dp"/>
-
             <com.google.android.material.slider.Slider
                 android:id="@+id/trivia_all_words_modal_bsc_num_words_slider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/trivia_all_words_modal_bsc_second_divider"
+                android:layout_below="@+id/trivia_all_words_modal_bsc_third_divider"
                 android:layout_marginHorizontal="21dp"
                 android:stepSize="5"
                 android:valueFrom="5.0"
@@ -123,51 +165,52 @@
                 app:tickRadiusInactive="6dp"
                 app:trackColor="@color/black"
                 tools:ignore="SpeakableTextPresentCheck" />
-            <com.google.android.material.materialswitch.MaterialSwitch
+        </RelativeLayout>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trivia_all_words_modal_bsc_select_words_switch"
+            android:text="@string/select_words"
+            android:textColor="@color/main_blue"
+            app:trackTint="@color/secondary_blue_gradient"
+            app:thumbTint="@color/main_blue"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserratblack"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/trivia_all_words_modal_bsc_num_questions_per_word_rl"/>
+        <RelativeLayout
+            android:id="@+id/trivia_all_words_modal_bsc_select_words_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/trivia_all_words_modal_bsc_select_words_switch"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:visibility="gone">
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/trivia_all_words_modal_bsc_select_words_switch"
-                android:text="@string/select_words"
-                android:textColor="@color/main_blue"
-                app:trackTint="@color/secondary_blue_gradient"
-                app:thumbTint="@color/main_blue"
-                android:textSize="16sp"
                 android:fontFamily="@font/montserratblack"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/trivia_all_words_modal_bsc_num_words_slider"/>
-            <RelativeLayout
-                android:id="@+id/trivia_all_words_modal_bsc_select_words_rl"
+                android:text="@string/choose_words_for_trivia"
+                android:textColor="@color/main_blue"
+                android:id="@+id/trivia_all_words_bsc_select_words_rv_title"/>
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/trivia_all_words_modal_bsc_select_words_switch"
-                android:layout_marginStart="21dp"
-                android:layout_marginEnd="21dp"
-                android:visibility="visible">
-                <TextView
+                android:layout_below="@+id/trivia_all_words_bsc_select_words_rv_title"
+                android:scrollbarSize="1dp">
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserratblack"
-                    android:text="@string/choose_words_for_trivia"
-                    android:textColor="@color/main_blue"
-                    android:id="@+id/trivia_all_words_bsc_select_word_rv_title"/>
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/trivia_all_words_bsc_select_word_rv_title"
-                    android:scrollbarSize="1dp">
-                    <RelativeLayout
+                    android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="3dp"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:layout_marginTop="3dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-                            android:orientation="horizontal"
-                            android:id="@+id/existing_tag_rv_edit_word_activity"/>
-                    </RelativeLayout>
-                </HorizontalScrollView>
-            </RelativeLayout>
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                        android:orientation="horizontal"
+                        android:id="@+id/trivia_all_words_bsc_select_words_staggeredRV"/>
+                </RelativeLayout>
+            </HorizontalScrollView>
         </RelativeLayout>
     </RelativeLayout>
 </FrameLayout>
